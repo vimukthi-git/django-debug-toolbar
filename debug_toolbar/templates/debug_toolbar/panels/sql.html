@@ -2,7 +2,8 @@
 <table>
 	<thead>
 		<tr>
-			<th>{% trans "Time" %}&nbsp;(ms)</th>
+			<th></th>
+                        <th>{% trans "Time" %}&nbsp;(ms)</th>
 			<th>{% trans "Action" %}</th>
 			<th>{% trans 'Stacktrace' %}</th>
 			<th>{% trans 'Alias' %}</th>
@@ -12,6 +13,7 @@
 	<tbody>
 		{% for query in queries %}
 			<tr class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+                                <td>{{ forloop.counter }}</td>
 				<td>{{ query.duration|floatformat:"2" }}</td>
 				<td>
 				{% if query.params %}
